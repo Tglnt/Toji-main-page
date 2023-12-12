@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to ICO Converter</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="icon-converter.css">
+    <!-- Include the Bungee Inline font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <!-- Link to your JavaScript file -->
+    <script src="icon-converter.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Image to Icon Converter</h1>
+        <h2 class="subtitle">FFXAN</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="convertToIco()">Convert to ICO</button>
+        <canvas id="resultCanvas" width="64" height="64"></canvas>
+        <a id="downloadLink" style="display: none;">Download ICO</a>
+    </div>
+
+</body>
+</html>
