@@ -82,7 +82,7 @@ function downloadQRCode() {
     // Create a link element and set its attributes
     var link = document.createElement("a");
     link.href = qrCodeImage;
-    link.download = "qrcode.png";
+    link.download = "qrcode.png"; // Ensure the file extension is ".png"
 
     // Append the link to the document and trigger a click event
     document.body.appendChild(link);
@@ -91,6 +91,7 @@ function downloadQRCode() {
     // Remove the link from the document
     document.body.removeChild(link);
 }
+
 
 function displaySelectedImage() {
     // Get the selected image file
