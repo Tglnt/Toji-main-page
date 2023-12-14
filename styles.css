@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #cccccc; /* Updated background color */
 }
 
 header {
@@ -84,4 +84,22 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em;
+}
+
+/* New styles for download buttons */
+main ul li button {
+    text-transform: uppercase;
+    background-color: #3399ff;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+main ul li button:hover {
+    background-color: #007bb5;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
