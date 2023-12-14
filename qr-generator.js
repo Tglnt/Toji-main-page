@@ -77,6 +77,31 @@ function generateQRCode() {
     downloadBtn.style.display = "block";
 }
 
+function getCurrentLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var outputElement = document.getElementById("geolocationOutput");
+                outputElement.innerText = `Latitude: ${latitude}\nLongitude: ${longitude}`;
+            },
+            function (error) {
+                console.error("Error getting geolocation:", error.message);
+
+                // Display an error message to the user
+                var outputElement = document.getElementById("geolocationOutput");
+                outputElement.innerText = "Error getting geolocation. Please enable location services.";
+
+                // Alert for debugging purposes
+                alert("Geolocation error: " + error.message);
+            }
+        );
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
 function downloadQRCode() {
     // Get the QR code image as a data URL
     var qrCodeImage = document.getElementById("qrCode").getElementsByTagName("img")[0];
