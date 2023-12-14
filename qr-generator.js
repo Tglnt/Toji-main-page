@@ -61,13 +61,15 @@ function generateQRCode() {
             break;
     }
 
-    // Generate QR Code and display it
+    // Generate QR Code with a white border
     var qrCodeDiv = document.getElementById("qrCode");
     qrCodeDiv.innerHTML = "";
     var qrcode = new QRCode(qrCodeDiv, {
         text: inputValue,
         width: 128,
         height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff", // White border color
     });
 
     // Show the download button
@@ -77,11 +79,25 @@ function generateQRCode() {
 
 function downloadQRCode() {
     // Get the QR code image as a data URL
-    var qrCodeImage = document.getElementById("qrCode").getElementsByTagName("img")[0].src;
+    var qrCodeImage = document.getElementById("qrCode").getElementsByTagName("img")[0];
+
+    // Create a canvas and set its size
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = qrCodeImage.width + 20; // Add 20 pixels for the white border
+    canvas.height = qrCodeImage.height + 20; // Add 20 pixels for the white border
+
+    // Draw the QR code with a white border on the canvas
+    ctx.fillStyle = "#ffffff"; // Set fill color to white
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas with white
+    ctx.drawImage(qrCodeImage, 10, 10, qrCodeImage.width, qrCodeImage.height);
+
+    // Convert the canvas to a data URL
+    var canvasDataURL = canvas.toDataURL("image/png");
 
     // Create a link element and set its attributes
     var link = document.createElement("a");
-    link.href = qrCodeImage;
+    link.href = canvasDataURL;
     link.download = "qrcode.png"; // Ensure the file extension is ".png"
 
     // Append the link to the document and trigger a click event
@@ -91,43 +107,3 @@ function downloadQRCode() {
     // Remove the link from the document
     document.body.removeChild(link);
 }
-
-
-function displaySelectedImage() {
-    // Get the selected image file
-    var inputElement = document.getElementById("image");
-    var file = inputElement.files[0];
-
-    // Display the selected image in the container
-    var selectedImageContainer = document.getElementById("selectedImageContainer");
-    var selectedImage = document.getElementById("selectedImage");
-
-    if (file) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            selectedImage.src = e.target.result;
-            selectedImageContainer.style.display = "block";
-        };
-        reader.readAsDataURL(file);
-    } else {
-        // If no file is selected, hide the image container
-        selectedImageContainer.style.display = "none";
-        selectedImage.src = "";
-    }
-}
-
-function getCurrentLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            var outputElement = document.getElementById("geolocationOutput");
-            outputElement.innerText = `Latitude: ${latitude}\nLongitude: ${longitude}`;
-        }, function (error) {
-            console.error(error.message);
-        });
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
-
