@@ -60,20 +60,30 @@
 
         <h2 style="font-family: 'Russo One', sans-serif; text-transform: uppercase;">ANIME</h2>
         <ul>
-            <li style="font-family: 'Teko', sans-serif; color: black;">
-                <span style="animation: rainbowColor 5s infinite;">Demon Slayer</span>
+            <li>
+                <a href="about-demon-slayer.html">
+                    <span id="demonSlayer" onmouseover="changeColor('demonSlayer')" onmouseout="resetColor('demonSlayer')" style="font-family: 'Teko', sans-serif; color: black;">Demon Slayer</span>
+                </a>
             </li>
-            <li style="font-family: 'Teko', sans-serif; color: black;">
-                <span style="animation: rainbowColor 5s infinite;">Jujutsu Kaisen</span>
+            <li>
+                <a href="about-jujutsu-kaisen.html">
+                    <span id="jujutsuKaisen" onmouseover="changeColor('jujutsuKaisen')" onmouseout="resetColor('jujutsuKaisen')" style="font-family: 'Teko', sans-serif; color: black;">Jujutsu Kaisen</span>
+                </a>
             </li>
-            <li style="font-family: 'Teko', sans-serif; color: black;">
-                <span style="animation: rainbowColor 5s infinite;">One Punch Man</span>
+            <li>
+                <a href="about-one-punch-man.html">
+                    <span id="onePunchMan" onmouseover="changeColor('onePunchMan')" onmouseout="resetColor('onePunchMan')" style="font-family: 'Teko', sans-serif; color: black;">One Punch Man</span>
+                </a>
             </li>
-            <li style="font-family: 'Teko', sans-serif; color: black;">
-                <span style="animation: rainbowColor 5s infinite;">Naruto</span>
+            <li>
+                <a href="about-naruto.html">
+                    <span id="naruto" onmouseover="changeColor('naruto')" onmouseout="resetColor('naruto')" style="font-family: 'Teko', sans-serif; color: black;">Naruto</span>
+                </a>
             </li>
-            <li style="font-family: 'Teko', sans-serif; color: black;">
-                <span style="animation: rainbowColor 5s infinite;">Tokyo Ghoul</span>
+            <li>
+                <a href="about-tokyo-ghoul.html">
+                    <span id="tokyoGhoul" onmouseover="changeColor('tokyoGhoul')" onmouseout="resetColor('tokyoGhoul')" style="font-family: 'Teko', sans-serif; color: black;">Tokyo Ghoul</span>
+                </a>
             </li>
         </ul>
     </main>
@@ -94,5 +104,17 @@
             100% { color: #cc33ff; }
         }
     </style>
+
+    <script>
+        function changeColor(id) {
+            document.getElementById(id).style.color = 'transparent';
+            document.getElementById(id).style.animation = 'rainbowColor 5s infinite';
+        }
+
+        function resetColor(id) {
+            document.getElementById(id).style.color = 'black';
+            document.getElementById(id).style.animation = 'none';
+        }
+    </script>
 </body>
 </html>
