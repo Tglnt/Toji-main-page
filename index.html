@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <nav>
+        <nav style="box-shadow: 0px 5px 10px #404040; background-color: #404040;">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="icon-converter.html">Icon Converter</a></li>
@@ -61,29 +61,29 @@
         <h2 style="font-family: 'Russo One', sans-serif; text-transform: uppercase;">ANIME</h2>
         <ul>
             <li>
-                <a href="about-demon-slayer.html">
-                    <span id="demonSlayer" onmouseover="changeColor('demonSlayer')" onmouseout="resetColor('demonSlayer')" style="font-family: 'Teko', sans-serif; color: black;">Demon Slayer</span>
-                </a>
+                <span id="demonSlayer" onmouseover="changeColor('demonSlayer')" onmouseout="resetColor('demonSlayer')" style="font-family: 'Teko', sans-serif; color: black; font-size: 18px; font-weight: bold;">Demon Slayer</span>
+                <br>
+                <button onclick="openPage('about-demon-slayer.html')" style="background-color: #8f00b3; color: white; font-family: 'Teko', sans-serif;">About Demon Slayer</button>
             </li>
             <li>
-                <a href="about-jujutsu-kaisen.html">
-                    <span id="jujutsuKaisen" onmouseover="changeColor('jujutsuKaisen')" onmouseout="resetColor('jujutsuKaisen')" style="font-family: 'Teko', sans-serif; color: black;">Jujutsu Kaisen</span>
-                </a>
+                <span id="jujutsuKaisen" onmouseover="changeColor('jujutsuKaisen')" onmouseout="resetColor('jujutsuKaisen')" style="font-family: 'Teko', sans-serif; color: black; font-size: 18px; font-weight: bold;">Jujutsu Kaisen</span>
+                <br>
+                <button onclick="openPage('about-jujutsu-kaisen.html')" style="background-color: #8f00b3; color: white; font-family: 'Teko', sans-serif;">About Jujutsu Kaisen</button>
             </li>
             <li>
-                <a href="about-one-punch-man.html">
-                    <span id="onePunchMan" onmouseover="changeColor('onePunchMan')" onmouseout="resetColor('onePunchMan')" style="font-family: 'Teko', sans-serif; color: black;">One Punch Man</span>
-                </a>
+                <span id="onePunchMan" onmouseover="changeColor('onePunchMan')" onmouseout="resetColor('onePunchMan')" style="font-family: 'Teko', sans-serif; color: black; font-size: 18px; font-weight: bold;">One Punch Man</span>
+                <br>
+                <button onclick="openPage('about-one-punch-man.html')" style="background-color: #8f00b3; color: white; font-family: 'Teko', sans-serif;">About One Punch Man</button>
             </li>
             <li>
-                <a href="about-naruto.html">
-                    <span id="naruto" onmouseover="changeColor('naruto')" onmouseout="resetColor('naruto')" style="font-family: 'Teko', sans-serif; color: black;">Naruto</span>
-                </a>
+                <span id="naruto" onmouseover="changeColor('naruto')" onmouseout="resetColor('naruto')" style="font-family: 'Teko', sans-serif; color: black; font-size: 18px; font-weight: bold;">Naruto</span>
+                <br>
+                <button onclick="openPage('about-naruto.html')" style="background-color: #8f00b3; color: white; font-family: 'Teko', sans-serif;">About Naruto</button>
             </li>
             <li>
-                <a href="about-tokyo-ghoul.html">
-                    <span id="tokyoGhoul" onmouseover="changeColor('tokyoGhoul')" onmouseout="resetColor('tokyoGhoul')" style="font-family: 'Teko', sans-serif; color: black;">Tokyo Ghoul</span>
-                </a>
+                <span id="tokyoGhoul" onmouseover="changeColor('tokyoGhoul')" onmouseout="resetColor('tokyoGhoul')" style="font-family: 'Teko', sans-serif; color: black; font-size: 18px; font-weight: bold;">Tokyo Ghoul</span>
+                <br>
+                <button onclick="openPage('about-tokyo-ghoul.html')" style="background-color: #8f00b3; color: white; font-family: 'Teko', sans-serif;">About Tokyo Ghoul</button>
             </li>
         </ul>
     </main>
@@ -114,6 +114,10 @@
         function resetColor(id) {
             document.getElementById(id).style.color = 'black';
             document.getElementById(id).style.animation = 'none';
+        }
+
+        function openPage(page) {
+            window.location.href = page;
         }
     </script>
 </body>
