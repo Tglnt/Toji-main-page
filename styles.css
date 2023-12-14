@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #cccccc; /* Updated background color */
+    background-color: #cccccc;
+    color: #000; /* Default text color */
 }
 
 header {
@@ -102,4 +103,19 @@ main ul li button:hover {
     background-color: #007bb5;
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* New styles for anime list */
+main h2:nth-child(2) {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+}
+
+main ul:nth-child(3) li {
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+main ul:nth-child(3) li:hover {
+    color: #3498db;
+    animation: rainbowGlow 5s infinite; /* Add rainbow animation on hover */
 }
